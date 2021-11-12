@@ -31,21 +31,44 @@ for (var x = 0; x < supplyChanges.length; x++)
   if (supplyChanges[x] > 0) {
     console.log('Added', supplyChanges[x], 'parts.');
   } else if (supplyChanges[x] === 0) {
-    console.log('No change.');
+      console.log('No change.');
   } else if (supplyChanges[x] < 0) {
-    console.log('Removed', supplyChanges[x], 'parts.');
+      console.log('Removed', supplyChanges[x], 'parts.');
   }
 }
-
 // STRETCH GOALS
 console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop.
 console.log('7. Showing supplyChanges with "for of" loop');
-
+for (supplyChanges[x] of supplyChanges) {
+  if (supplyChanges[x] > 0) {
+    console.log('Added', supplyChanges[x], 'parts.');
+    supplyChanges.pop();//I don't know why, but without this, I had a duplicate 25.
+  } else if (supplyChanges[x] === 0) {
+      console.log('No change.');
+  } else if (supplyChanges[x] < 0) {
+      console.log('Removed', supplyChanges[x], 'parts.');
+  }
+}
 // 8. Rewrite the `for` loop from #6 as a `while` loop.
 console.log('8. Showing supplyChanges with "while" loop');
-
+var x = 0;
+while (supplyChanges.length > x) {
+  if (supplyChanges[x] > 0) {
+    console.log('Added', supplyChanges[x], 'parts.');
+  } else if (supplyChanges[x] === 0) {
+      console.log('No change.');
+  } else if (supplyChanges[x] < 0) {
+      console.log('Removed', supplyChanges[x], 'parts.');
+  }
+  x++
+}
 
 // 9. Write a loop to determine the total number of parts available by
 //    adding up all the numbers in the 'supplyChanges' array.
 console.log('9. Total supplies available is:');
+var sum = 0;
+for (var x = 0; x < supplyChanges.length; x++) {
+  sum += supplyChanges[x];
+}
+console.log(sum);
