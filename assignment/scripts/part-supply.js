@@ -43,7 +43,7 @@ console.log('7. Showing supplyChanges with "for of" loop');
 for (supplyChanges[x] of supplyChanges) {
   if (supplyChanges[x] > 0) {
     console.log('Added', supplyChanges[x], 'parts.');
-    supplyChanges.pop();//I don't know why, but without this, I had a duplicate 25.
+    supplyChanges.pop(); //I don't know why, but without this, I had a duplicate 25.
   } else if (supplyChanges[x] === 0) {
       console.log('No change.');
   } else if (supplyChanges[x] < 0) {
